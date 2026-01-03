@@ -1,4 +1,4 @@
-import Internet from "../assets/images/Internet-white-logo.svg";
+import Internet from "../assets/images/cartoon-477.gif";
 export default function Nav() {
   return (
     <>

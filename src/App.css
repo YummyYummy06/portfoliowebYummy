@@ -25,6 +25,8 @@ p {
 }
 
 .nav {
+  position: relative;
+  overflow: hidden;
   min-width: 70px;
   height: 100%;
   display: flex;
@@ -32,7 +34,6 @@ p {
   align-items: center;
   justify-content: space-evenly;
   border-right: solid white 1px;
-  position: relative;
   background-color: black;
 }
 
@@ -42,6 +43,11 @@ p {
   height: 50px;
   max-width: 100%;
   padding: 10px;
+  transition: transform 0.2s ease;
+}
+.internet-logo:hover {
+  transform: scale(1.5);
+  overflow: hidden;
 }
 
 .vertical {
