@@ -1,12 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Cascadia Code", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  text-align: justify;
 }
-body {
-  background-image: url(./assets/images/BraveWallpaper7.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+p {
+  text-indent: 2em;
 }
 
 .page {
@@ -14,8 +16,12 @@ body {
   display: flex;
 }
 .content {
-  border: solid red 1px;
-  width: calc(100dvw - 73px);
+  width: calc(100dvw - 71px);
+  text-align: center;
+  background-image: url(./assets/images/BraveWallpaper7.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .nav {
@@ -27,6 +33,7 @@ body {
   justify-content: space-evenly;
   border-right: solid white 1px;
   position: relative;
+  background-color: black;
 }
 
 .internet-logo {
@@ -40,4 +47,86 @@ body {
 .vertical {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+}
+
+.cajon-nombre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.inder-regular {
+  font-family: "Inder", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.profesion {
+  font-family: "Cascadia Code", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.barra {
+  font-size: 100px;
+  font-weight: 100;
+  margin-inline: 20px;
+}
+.cajon-prof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cajon-content {
+  width: calcl(100vw - 71px);
+  text-align: left;
+  padding-inline: 200px;
+  padding-top: 50px;
+}
+.cajon-projects {
+  width: calcl(100vw - 71px);
+  padding-inline: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 50px;
+  place-items: center;
+  margin-bottom: 50px;
+}
+
+.section-name {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.text-content {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.projects {
+  height: 300px;
+  width: 500px;
+  padding: 20px;
+  padding-inline: 30px;
+  border: solid #5f4c9e 2px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(95, 76, 158, 0.6);
+  text-align: left;
+  position: relative;
+}
+.project-name {
+  position: absolute;
+  top: 20px;
+}
+.project-tech {
+  position: absolute;
+  bottom: 20px;
+}
+.project-description {
+  position: absolute;
+  top: 60px;
+  padding-right: 30px;
 }
