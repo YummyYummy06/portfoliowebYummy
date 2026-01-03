@@ -3,7 +3,6 @@
   padding: 0;
   font-family: "Cascadia Code", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
   text-align: justify;
 }
@@ -14,6 +13,7 @@ p {
 .page {
   min-height: 100vh;
   display: flex;
+  background-color: black;
 }
 .content {
   width: calc(100dvw - 71px);
@@ -26,7 +26,7 @@ p {
 
 .nav {
   min-width: 70px;
-  height: 100dvh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,13 +87,23 @@ p {
   padding-top: 50px;
 }
 .cajon-projects {
-  width: calcl(100vw - 71px);
   padding-inline: 100px;
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   grid-gap: 50px;
   place-items: center;
   margin-bottom: 50px;
+}
+/* Cada item del grid */
+.cajon-projects > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto flotante */
+.cajon-projects > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25),
+    0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 .section-name {
@@ -120,13 +130,79 @@ p {
 .project-name {
   position: absolute;
   top: 20px;
+  font-size: 20px;
 }
 .project-tech {
   position: absolute;
   bottom: 20px;
+  text-indent: 0;
 }
 .project-description {
   position: absolute;
-  top: 60px;
+  top: 70px;
   padding-right: 30px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+.cajon-carroussel {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.img {
+  width: 1200px;
+  height: 675px;
+  border-radius: 25px;
+  border: 2px solid white;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.35),
+    0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.1s;
+  background-color: black;
+}
+
+.btn:hover {
+  background-color: #6f5cb0;
+}
+
+.btn:focus {
+  outline-offset: 2px;
+  background-color: #5f4c9e;
+}
+
+/* Active: mientras el botón está presionado */
+.btn:active {
+  background-color: rgb(56, 45, 93);
+  transform: scale(0.95); /* efecto de “apretado” */
+  outline: none; /* por si aún aparece el borde */
+}
+
+.left-btn {
+  background-image: url("./assets/images/leftArrow-logo.svg");
+}
+
+.righ-btn {
+  background-image: url("./assets/images/rightArrowlogo.svg");
+}
+
+.btn:active {
+  outline: none;
+  border: none;
 }

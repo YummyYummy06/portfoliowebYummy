@@ -1,4 +1,5 @@
 import Nav from "../components/Nav";
+import Carroussel from "../components/Carroussel";
 
 export default function Home() {
   return (
@@ -16,7 +17,9 @@ export default function Home() {
           </div>
         </div>
         <div className="cajon-content">
-          <h3 className="section-name">ABOUT ME</h3>
+          <h3 className="section-name">
+            <strong>ABOUT ME</strong>
+          </h3>
           <p className="text-content">
             Born in the 2000s, I’ve been fascinated by how technology works
             since I was a child, and today I channel that curiosity into
@@ -24,7 +27,9 @@ export default function Home() {
             technical challenges, learning new tools, and working on
             collaborative projects that make a difference.
           </p>
-          <h3 className="section-name">PROJECTS</h3>
+          <h3 className="section-name">
+            <strong>PROJECTS</strong>
+          </h3>
           <p className="text-content">
             Here are some of the projects I’ve worked on, showcasing my skills
             and passion for building practical and innovative software
@@ -34,7 +39,9 @@ export default function Home() {
         </div>
         <div className="cajon-projects">
           <div className="projects">
-            <h4 className="project-name">TaskManager App</h4>
+            <h4 className="project-name">
+              <strong>TaskManager App</strong>
+            </h4>
             <p className="project-description">
               A web application to organize daily tasks with user
               authentication, categories, and reminders. Built to improve
@@ -44,21 +51,25 @@ export default function Home() {
               tracking. Lo hago algo mas largo. A web application to organize
             </p>
             <p className="project-tech">
-              Technologies: React, Node.js, MongoDB, JWT
+              <strong>Technologies:</strong> React, Node.js, MongoDB, JWT
             </p>
           </div>
           <div className="projects">
-            <h4 className="project-name">Interactive Portfolio</h4>
+            <h4 className="project-name">
+              <strong>Interactive Portfolio</strong>
+            </h4>
             <p className="project-description">
               My personal portfolio designed to showcase projects and skills in
               an interactive and responsive way, using animations and modern web
               techniques.
             </p>
             <p className="project-tech">
-              Technologies: HTML, CSS, JavaScript, Framer Motion
+              <strong>Technologies:</strong> HTML, CSS, JavaScript, Framer
+              Motion
             </p>
           </div>
         </div>
+        <Carroussel></Carroussel>
       </div>
     </div>
   );
