@@ -2,6 +2,28 @@ import Nav from "../components/Nav";
 import Carroussel from "../components/Carroussel";
 
 export default function Home() {
+  const openGitHub = (n) => {
+    switch (n) {
+      case 1:
+        window.open(
+          "https://github.com/YummyYummy06/ProyectoFinDeGrado2025",
+          "_blank",
+          "noopener,noreferrer"
+        );
+        break;
+      case 2:
+        window.open(
+          "https://github.com/YummyYummy06/HistoricoVentasObjetDB",
+          "_blank",
+          "noopener,noreferrer"
+        );
+        break;
+
+      default:
+        console.log("Proyecto no definido");
+    }
+  };
+
   return (
     <div className="page">
       <nav>
@@ -38,7 +60,7 @@ export default function Home() {
           </p>
         </div>
         <div className="cajon-projects">
-          <div className="projects">
+          <div className="projects" onClick={() => openGitHub(1)}>
             <h4 className="project-name">
               <strong>TaskManager App</strong>
             </h4>
@@ -54,7 +76,7 @@ export default function Home() {
               <strong>Technologies:</strong> React, Node.js, MongoDB, JWT
             </p>
           </div>
-          <div className="projects">
+          <div className="projects" onClick={() => openGitHub(2)}>
             <h4 className="project-name">
               <strong>Interactive Portfolio</strong>
             </h4>
