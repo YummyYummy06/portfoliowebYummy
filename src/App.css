@@ -53,6 +53,19 @@ p {
 .vertical {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease;
+}
+.vertical:hover {
+  transform: scale(1.2) rotate(180deg);
+  transition: transform 0.3s ease;
+  color: #6f5cb0;
+  font-weight: 900;
+}
+
+.vertical-logo {
+  transform: rotate(90deg);
 }
 
 .cajon-nombre {
