@@ -23,6 +23,9 @@ p {
   background-position: center;
   background-repeat: no-repeat;
 }
+.nombre {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
 
 .nav {
   position: relative;
@@ -67,12 +70,16 @@ p {
 .vertical-logo {
   transform: rotate(90deg);
 }
+.vertical-logo:hover {
+  color: #6f5cb0;
+}
 
 .cajon-nombre {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 20px;
+  width: calc(100vw - 71px);
 }
 
 .inder-regular {
@@ -100,11 +107,15 @@ p {
 }
 
 .cajon-content {
-  width: calcl(100vw - 71px);
+  width: calc(100% - 40px); /* ancho relativo al contenedor */
+  max-width: 1200px; /* límite máximo en desktop */
   text-align: left;
-  padding-inline: 200px;
+  padding-inline: clamp(16px, 10vw, 200px); /* padding adaptable a pantalla */
   padding-top: 50px;
+  margin: 0 auto; /* centra el contenido en pantallas grandes */
+  box-sizing: border-box; /* incluye padding en el ancho */
 }
+
 .cajon-projects {
   padding-inline: 100px;
   display: grid;
@@ -166,13 +177,18 @@ p {
   height: 50px;
   width: 50px;
 }
-.cajon-carroussel {
+.cajon-carroussel,
+.cajon-logos {
   position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.cajon-logos {
+  width: calc(100vw - 71px);
+  overflow: hidden;
 }
 
 .img {
@@ -224,4 +240,39 @@ p {
 .btn:active {
   outline: none;
   border: none;
+}
+
+.i-mov {
+  width: 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  animation: mover 15s linear infinite alternate;
+}
+/* desfase de animación */
+.i-mov:nth-child(1) {
+  animation-delay: 0s;
+}
+.i-mov:nth-child(2) {
+  animation-delay: -3s;
+}
+.i-mov:nth-child(3) {
+  animation-delay: -6s;
+}
+.i-mov:nth-child(4) {
+  animation-delay: -9s;
+}
+.i-mov:nth-child(5) {
+  animation-delay: -12s;
+}
+
+/* KEYFRAMES */
+@keyframes mover {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 100px);
+  }
 }

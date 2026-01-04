@@ -1,5 +1,6 @@
 import Nav from "../components/Nav";
 import Carroussel from "../components/Carroussel";
+import TechLogos from "../components/TechLogos";
 
 export default function Home() {
   const openGitHub = (n) => {
@@ -92,6 +93,7 @@ export default function Home() {
           </div>
         </div>
         <Carroussel></Carroussel>
+        <TechLogos></TechLogos>
       </div>
     </div>
   );
