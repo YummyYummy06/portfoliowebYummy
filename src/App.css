@@ -23,8 +23,15 @@ p {
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .nombre {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+}
+.barra {
+  font-size: 2rem;
+  margin: 0 10px;
 }
 
 .nav {
@@ -76,10 +83,13 @@ p {
 
 .cajon-nombre {
   display: flex;
+  flex-direction: row; /* fila por defecto */
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* permite que los elementos bajen si no caben */
   padding-top: 20px;
   width: calc(100vw - 71px);
+  gap: 10px; /* espacio entre los elementos */
 }
 
 .inder-regular {
@@ -93,6 +103,7 @@ p {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: italic;
+  font-size: 1.2rem;
 }
 
 .barra {
@@ -274,5 +285,30 @@ p {
   }
   to {
     left: calc(100% - 100px);
+  }
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+  .cajon-nombre {
+    flex-direction: column; /* apila verticalmente en pantallas pequeñas */
+    align-items: center;
+    text-align: center;
+  }
+
+  .barra {
+    display: none;
+  }
+
+  .cajon-prof {
+    align-items: center; /* centra el texto de profesión */
+  }
+
+  .nombre {
+    font-size: 1.5rem;
+  }
+
+  .profesion {
+    font-size: 1rem;
   }
 }
