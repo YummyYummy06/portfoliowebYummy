@@ -17,6 +17,7 @@ p {
 }
 .content {
   width: calc(100dvw - 71px);
+  margin-left: 71px;
   text-align: center;
   background-image: url(./assets/images/BraveWallpaper7.png);
   background-size: cover;
@@ -35,7 +36,7 @@ p {
 }
 
 .nav {
-  position: relative;
+  position: fixed;
   overflow: hidden;
   min-width: 70px;
   height: 100%;
