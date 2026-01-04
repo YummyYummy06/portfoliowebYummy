@@ -1,6 +1,15 @@
 import Nav from "../components/Nav";
 import Carroussel from "../components/Carroussel";
 import TechLogos from "../components/TechLogos";
+import {
+  RiReactjsFill,
+  RiGithubFill,
+  RiNodejsLine,
+  RiCss3Line,
+  RiHtml5Line,
+  RiJavascriptLine,
+  RiNotionLine,
+} from "@remixicon/react";
 
 export default function Home() {
   const openGitHub = (n) => {
@@ -74,7 +83,9 @@ export default function Home() {
               tracking. Lo hago algo mas largo. A web application to organize
             </p>
             <p className="project-tech">
-              <strong>Technologies:</strong> React, Node.js, MongoDB, JWT
+              <strong>Technologies:</strong>{" "}
+              <RiReactjsFill size={50} color="rgba(84,192,222,1)" />,
+              <RiNodejsLine size={50} color="rgba(130,189,2,1)" />, MongoDB, JWT
             </p>
           </div>
           <div className="projects" onClick={() => openGitHub(2)}>
@@ -87,8 +98,11 @@ export default function Home() {
               techniques.
             </p>
             <p className="project-tech">
-              <strong>Technologies:</strong> HTML, CSS, JavaScript, Framer
-              Motion
+              <strong>Technologies:</strong>
+              <RiHtml5Line size={30} color="rgba(242,102,41,1)" />,
+              <RiCss3Line size={30} color="rgba(39,77,230,1)" />,
+              <RiJavascriptLine size={30} color="rgba(245,223,27,1)" />,{" "}
+              <RiNotionLine size={32} color="rgba(255,255,255,1)" />
             </p>
           </div>
         </div>
