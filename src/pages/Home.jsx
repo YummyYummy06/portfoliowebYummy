@@ -1,6 +1,7 @@
 import Nav from "../components/Nav";
 import Carroussel from "../components/Carroussel";
 import TechLogos from "../components/TechLogos";
+import Contact from "../components/Contact";
 import n8n from "../assets/images/n8n-icon-seeklogo.svg";
 import googleCalendarLogo from "../assets/images/googleCalendar-logo.svg";
 import {
@@ -130,6 +131,7 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <Contact></Contact>
         <Carroussel></Carroussel>
         <TechLogos></TechLogos>
       </div>

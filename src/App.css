@@ -14,15 +14,15 @@ p {
   min-height: 100vh;
   display: flex;
   background-color: black;
+  background-image: url(./assets/images/BraveWallpaper7.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .content {
   width: calc(100dvw - 71px);
   margin-left: 71px;
   text-align: center;
-  background-image: url(./assets/images/BraveWallpaper7.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .nombre {
@@ -33,6 +33,28 @@ p {
 .barra {
   font-size: 2rem;
   margin: 0 10px;
+}
+
+.email,
+.telf,
+.linkedin,
+.github {
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.email:hover,
+.telf:hover,
+.linkedin:hover,
+.github:hover {
+  transform: scale(1.2);
+  color: #6f5cb0;
+  font-weight: 900;
+}
+.social-links {
+  display: inline-flex; /* elementos en línea, pero flex para controlar */
+  gap: 0; /* sin espacio */
 }
 
 .nav {
@@ -118,7 +140,8 @@ p {
   align-items: center;
 }
 
-.cajon-content {
+.cajon-content,
+.cajon-contacto {
   width: calc(100% - 40px); /* ancho relativo al contenedor */
   max-width: 1200px; /* límite máximo en desktop */
   text-align: left;
