@@ -278,6 +278,10 @@ p {
 .i-mov:nth-child(5) {
   animation-delay: -12s;
 }
+.tech-logos {
+  height: 30px;
+  width: 30px;
+}
 
 /* KEYFRAMES */
 @keyframes mover {

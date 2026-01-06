@@ -1,6 +1,8 @@
 import Nav from "../components/Nav";
 import Carroussel from "../components/Carroussel";
 import TechLogos from "../components/TechLogos";
+import n8n from "../assets/images/n8n-icon-seeklogo.svg";
+import googleCalendarLogo from "../assets/images/googleCalendar-logo.svg";
 import {
   RiReactjsFill,
   RiGithubFill,
@@ -9,6 +11,9 @@ import {
   RiHtml5Line,
   RiJavascriptLine,
   RiNotionLine,
+  RiOpenaiFill,
+  RiTelegramLine,
+  RiGoogleLine,
 } from "@remixicon/react";
 
 export default function Home() {
@@ -32,6 +37,13 @@ export default function Home() {
       default:
         console.log("Proyecto no definido");
     }
+  };
+  const openProject1 = () => {
+    window.open(
+      "/ai-workflow-automation.png ",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
@@ -74,22 +86,24 @@ export default function Home() {
           </p>
         </div>
         <div className="cajon-projects">
-          <div className="projects" onClick={() => openGitHub(1)}>
+          <div className="projects" onClick={() => openProject1()}>
             <h4 className="project-name">
-              <strong>TaskManager App</strong>
+              <strong>AI-powered workflow automation</strong>
             </h4>
             <p className="project-description">
-              A web application to organize daily tasks with user
-              authentication, categories, and reminders. Built to improve
-              productivity and task tracking. Lo hago algo mas largo. A web
-              application to organize daily tasks with user authentication,
-              categories, and reminders. Built to improve productivity and task
-              tracking. Lo hago algo mas largo. A web application to organize
+              An automated workflow built with n8n runs daily at 7:00 a.m.,
+              integrating weather data from an external API and Google Calendar
+              events. The collected information is processed by an OpenAI model
+              using a custom prompt, generating a contextual daily summary of
+              the weather in my city and scheduled activities, which is then
+              sent via a Telegram bot.
             </p>
             <p className="project-tech">
               <strong>Technologies:</strong>{" "}
-              <RiReactjsFill size={50} color="rgba(84,192,222,1)" />,
-              <RiNodejsLine size={50} color="rgba(130,189,2,1)" />, MongoDB, JWT
+              <RiOpenaiFill size={30} color="rgba(255,255,255,1)" />,
+              <img className="tech-logos" src={n8n} alt="n8n-logo"></img>,
+              <RiTelegramLine size={30} color="rgba(0,136,204,1)" />,
+              <RiGoogleLine size={30} color="rgba(240,187,64,1)" />
             </p>
           </div>
           <div className="projects" onClick={() => openGitHub(2)}>
