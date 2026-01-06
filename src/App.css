@@ -339,4 +339,130 @@ p {
   .profesion {
     font-size: 1rem;
   }
+
+  /* Ajustes para el contenido */
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cajon-content,
+  .cajon-contacto {
+    padding-inline: 16px; /* padding fijo pequeño en móviles */
+    padding-top: 30px;
+  }
+
+  /* Proyectos: cambiar a una columna y hacerlos responsivos */
+  .cajon-projects {
+    padding-inline: 16px;
+    display: grid;
+    grid-template-columns: 1fr; /* una columna en móviles */
+    grid-gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .projects {
+    width: 100%; /* ancho completo del contenedor */
+    max-width: 500px; /* límite máximo */
+    height: auto; /* altura automática */
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .project-name {
+    position: static; /* quitar posición absoluta para mejor flujo */
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .project-description {
+    position: static;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .project-tech {
+    position: static;
+    text-indent: 0;
+  }
+
+  /* Carrusel: hacer la imagen responsiva y botones superpuestos */
+  .cajon-carroussel {
+    position: relative;
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-inline: 16px; /* márgenes laterales */
+    margin-inline: auto; /* centrar el contenedor */
+    max-width: 95vw; /* limitar ancho total */
+  }
+
+  .img {
+    width: 100%;
+    max-width: 90vw; /* reducir ancho para hacerlo más pequeño */
+    height: auto;
+    border-radius: 15px;
+  }
+
+  .btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    z-index: 10;
+  }
+
+  .left-btn {
+    left: 10px;
+  }
+
+  .righ-btn {
+    right: 10px;
+  }
+
+  /* Logos técnicos: ajustar animación */
+  .i-mov {
+    width: 10vw;
+  }
+
+  /* Navegación: reducir ancho */
+  .nav {
+    min-width: 60px;
+  }
+
+  .content {
+    margin-left: 61px; /* ajustar margen para el nav reducido */
+  }
+
+  /* Ajustes para la sección de contacto */
+  .cajon-contacto {
+    padding-inline: 16px;
+    padding-top: 30px;
+    font-size: 0.9rem; /* reducir tamaño de fuente para mejor legibilidad */
+    line-height: 1.5; /* mejorar espaciado entre líneas */
+  }
+
+  .text-content {
+    margin-bottom: 15px; /* más espacio entre párrafos */
+  }
+
+  .email,
+  .telf,
+  .linkedin,
+  .github {
+    display: inline-block;
+    padding: 5px 8px; /* agregar padding para hacer los enlaces más touch-friendly */
+    margin: 2px 0;
+    border-radius: 5px; /* bordes redondeados para mejor apariencia */
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  }
+
+  .email:hover,
+  .telf:hover,
+  .linkedin:hover,
+  .github:hover {
+    transform: scale(1.05); /* efecto sutil en hover/tap */
+    background-color: rgba(111, 203, 176, 0.2); /* fondo sutil para destacar */
+  }
 }

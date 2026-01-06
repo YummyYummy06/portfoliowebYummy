@@ -45,7 +45,7 @@ export default function Contact() {
             GitHub
           </strong>
         </span>
-        .<p className="text-content">Feel free to connect with me there!</p>
+        <p className="text-content">Feel free to connect with me there!</p>
       </p>
     </div>
   );
