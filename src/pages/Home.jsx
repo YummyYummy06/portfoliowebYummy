@@ -53,11 +53,15 @@ export default function Home() {
             <strong>ABOUT ME</strong>
           </h3>
           <p className="text-content">
-            Born in the 2000s, I’ve been fascinated by how technology works
-            since I was a child, and today I channel that curiosity into
-            creating software that solves real-world problems. I enjoy tackling
-            technical challenges, learning new tools, and working on
-            collaborative projects that make a difference.
+            Passionate about technology and software development, I am currently
+            based in Marbella and at the beginning of my professional career.
+            Known for my positive attitude, consistency, and strong willingness
+            to learn, I have built a solid foundation through formal education,
+            personal projects, and internships. My curiosity about how
+            technology works began at a young age and has evolved into a focus
+            on web and backend development. I am highly motivated to keep
+            learning, enjoy tackling technical challenges, exploring new tools,
+            and collaborating on projects that deliver real-world impact.
           </p>
           <h3 className="section-name">
             <strong>PROJECTS</strong>
