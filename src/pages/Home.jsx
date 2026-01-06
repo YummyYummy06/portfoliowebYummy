@@ -132,7 +132,7 @@ export default function Home() {
           </div>
         </div>
         <Contact></Contact>
-        <Carroussel></Carroussel>
+
         <TechLogos></TechLogos>
       </div>
     </div>
