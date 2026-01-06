@@ -14,6 +14,7 @@ import {
   RiOpenaiFill,
   RiTelegramLine,
   RiGoogleLine,
+  RiSupabaseLine,
 } from "@remixicon/react";
 
 export default function Home() {
@@ -106,21 +107,26 @@ export default function Home() {
               <RiGoogleLine size={30} color="rgba(240,187,64,1)" />
             </p>
           </div>
-          <div className="projects" onClick={() => openGitHub(2)}>
+          <div className="projects" onClick={() => openGitHub(1)}>
             <h4 className="project-name">
-              <strong>Interactive Portfolio</strong>
+              <strong>Gym Management – Fullstack Web Application</strong>
             </h4>
             <p className="project-description">
-              My personal portfolio designed to showcase projects and skills in
-              an interactive and responsive way, using animations and modern web
-              techniques.
+              Built a fullstack web app for gym management, enabling secure user
+              registration, login, and class or locker bookings. Backend uses
+              Express with JWT authentication and bcrypt, frontend offers an
+              intuitive interface, and Supabase + Prisma handle the database.
+              Demonstrates fullstack skills, secure architecture, and seamless
+              user experience.
             </p>
             <p className="project-tech">
-              <strong>Technologies:</strong>
+              <strong>Technologies: </strong>
+              <RiReactjsFill size={32} color="rgba(70,194,221,1)" />,
+              <RiNodejsLine size={30} color="rgba(112,168,85,1)" />,
+              <RiJavascriptLine size={30} color="rgba(245,223,27,1)" />,
+              <RiSupabaseLine size={30} color="rgba(100,205,138,1)" />,
               <RiHtml5Line size={30} color="rgba(242,102,41,1)" />,
-              <RiCss3Line size={30} color="rgba(39,77,230,1)" />,
-              <RiJavascriptLine size={30} color="rgba(245,223,27,1)" />,{" "}
-              <RiNotionLine size={32} color="rgba(255,255,255,1)" />
+              <RiCss3Line size={30} color="rgba(39,77,230,1)" />
             </p>
           </div>
         </div>
