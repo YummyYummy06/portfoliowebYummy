@@ -153,18 +153,21 @@ p {
 
 .cajon-projects {
   padding-inline: 100px;
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  grid-gap: 50px;
-  place-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
   margin-bottom: 50px;
 }
-/* Cada item del grid */
+
+/* Cada item */
 .cajon-projects > div {
+  flex: 1 1 400px; /* base mínima */
+  max-width: 500px; /* opcional: evita que se estiren demasiado */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto flotante */
+/* Hover */
 .cajon-projects > div:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25),
@@ -227,8 +230,10 @@ p {
 }
 
 .img {
-  width: 1200px;
-  height: 675px;
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  height: auto;
   border-radius: 25px;
   border: 2px solid white;
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.35),

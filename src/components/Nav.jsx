@@ -1,11 +1,19 @@
 import GithubFillIcon from "remixicon-react/GithubFillIcon";
 import LinkedinBoxLine from "remixicon-react/LinkedinBoxLineIcon";
 import Internet from "../assets/images/cartoon-477.gif";
+import { useState } from "react";
 
 export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="nav">
-      <img className="internet-logo" src={Internet} alt="internet-logo" />
+    <nav className={`nav ${isOpen ? "open" : ""}`}>
+      <img
+        className="internet-logo"
+        src={Internet}
+        alt="internet-logo"
+        onClick={() => setIsOpen((prev) => !prev)}
+      />
       <a
         className="vertical"
         href="https://github.com/YummyYummy06"
