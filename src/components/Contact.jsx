@@ -27,9 +27,7 @@ export default function Contact() {
         <strong className="email" onClick={sendEmail}>
           navarro.miguel.a.n@gmail.com
         </strong>
-      </p>
-      <p className="text-content">
-        Or give me a call:
+        , or give me a call:
         <strong className="telf" onClick={sendWhatsapp}>
           +34 633 370 897
         </strong>
@@ -44,8 +42,8 @@ export default function Contact() {
           <strong className="github" onClick={goGitHub}>
             GitHub
           </strong>
+          , feel free to connect with me there!
         </span>
-        <p className="text-content">Feel free to connect with me there!</p>
       </p>
     </div>
   );
