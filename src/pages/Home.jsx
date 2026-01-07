@@ -3,7 +3,7 @@ import Carroussel from "../components/Carroussel";
 import TechLogos from "../components/TechLogos";
 import Contact from "../components/Contact";
 import n8n from "../assets/images/n8n-icon-seeklogo.svg";
-import googleCalendarLogo from "../assets/images/googleCalendar-logo.svg";
+import avatar from "../assets/images/avatar2.png";
 import {
   RiReactjsFill,
   RiGithubFill,
@@ -55,6 +55,7 @@ export default function Home() {
       </nav>
       <div className="content">
         <div className="cajon-nombre">
+          <img className="avatar" src={avatar} alt="avatar"></img>
           <h1 className="nombre"> MIGUEL ÁNGEL NAVARRO</h1>
           <h1 className="barra">/</h1>
           <div className="cajon-prof">

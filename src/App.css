@@ -30,6 +30,11 @@ p {
   font-weight: bold;
   margin: 0;
 }
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 .barra {
   font-size: 2rem;
   margin: 0 10px;
