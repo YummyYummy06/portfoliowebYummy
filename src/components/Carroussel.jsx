@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import htmlLogo from "../assets/images/react.svg";
+import htmlLogo from "../assets/images/HTML5-logo.svg";
 import cssLogo from "../assets/images/CSS3-logo.svg";
 import javascriptLogo from "../assets/images/JavaScript-logo.svg";
 import nodeLogo from "../assets/images/NodeJs-logo.svg";

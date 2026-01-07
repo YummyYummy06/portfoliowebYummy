@@ -120,6 +120,10 @@ p {
   width: calc(100vw - 71px);
   gap: 10px; /* espacio entre los elementos */
 }
+.tech-logos {
+  height: 30px;
+  width: 30px;
+}
 
 .inder-regular {
   font-family: "Inder", sans-serif;
@@ -231,8 +235,34 @@ p {
   padding-bottom: 50px;
 }
 .cajon-logos {
-  width: calc(100vw - 71px);
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto; /* Altura se adapta al contenido */
+  max-height: 40vh; /* No más de 40% de la altura de la pantalla */
+  overflow: hidden; /* Evita que los logos se salgan */
+  margin-bottom: 50px; /* Ajustable según diseño */
+  padding: 20px 0; /* Espacio arriba y abajo */
+}
+
+.logos-track {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
+
+.cajon-logos .i-mov {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .img {
@@ -286,45 +316,6 @@ p {
 .btn:active {
   outline: none;
   border: none;
-}
-
-.i-mov {
-  width: 5vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  animation: mover 15s linear infinite alternate;
-}
-/* desfase de animación */
-.i-mov:nth-child(1) {
-  animation-delay: 0s;
-}
-.i-mov:nth-child(2) {
-  animation-delay: -3s;
-}
-.i-mov:nth-child(3) {
-  animation-delay: -6s;
-}
-.i-mov:nth-child(4) {
-  animation-delay: -9s;
-}
-.i-mov:nth-child(5) {
-  animation-delay: -12s;
-}
-.tech-logos {
-  height: 30px;
-  width: 30px;
-}
-
-/* KEYFRAMES */
-@keyframes mover {
-  from {
-    left: 0;
-  }
-  to {
-    left: calc(100% - 100px);
-  }
 }
 
 /* Media query para móviles */
@@ -489,5 +480,21 @@ p {
     position: fixed;
     top: 0;
     left: 0;
+  }
+  .cajon-logos {
+    width: 100%;
+    height: auto; /* Altura automática en móviles */
+    margin-bottom: 50px; /* Menor margen inferior en móviles */
+    overflow: hidden;
+    max-width: 300px;
+  }
+
+  .cajon-logos .i-mov {
+    width: 30px; /* Logos más pequeños en móviles */
+    height: 30px;
+    margin: 0 5px; /* Margen reducido */
+  }
+  .logos-track {
+    animation: slide 15s linear infinite;
   }
 }

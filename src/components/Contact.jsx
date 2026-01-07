@@ -42,8 +42,8 @@ export default function Contact() {
           <strong className="github" onClick={goGitHub}>
             GitHub
           </strong>
-          , feel free to connect with me there!
         </span>
+        , feel free to connect with me there!
       </p>
     </div>
   );

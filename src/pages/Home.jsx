@@ -4,6 +4,8 @@ import TechLogos from "../components/TechLogos";
 import Contact from "../components/Contact";
 import n8n from "../assets/images/n8n-icon-seeklogo.svg";
 import avatar from "../assets/images/avatar2.png";
+import elementor from "../assets/images/Elementor-logo.svg";
+import stripeLogo from "../assets/images/Stripe-logo.svg";
 import {
   RiReactjsFill,
   RiGithubFill,
@@ -29,11 +31,7 @@ export default function Home() {
         );
         break;
       case 2:
-        window.open(
-          "https://github.com/YummyYummy06/HistoricoVentasObjetDB",
-          "_blank",
-          "noopener,noreferrer"
-        );
+        window.open("https://aepae.es", "_blank", "noopener,noreferrer");
         break;
 
       default:
@@ -131,9 +129,54 @@ export default function Home() {
               <RiCss3Line size={30} color="rgba(39,77,230,1)" />
             </p>
           </div>
+          <div className="projects" onClick={() => openGitHub(2)}>
+            <h4 className="project-name">
+              <strong>AEPAE Official Website Development</strong>
+            </h4>
+            <p className="project-description">
+              Directly contributed to the development and optimization of social
+              impact platforms, including collaboration in the creation and
+              ongoing management of the official website for the Spanish
+              Association for the Prevention of School Bullying (AEPAE), where I
+              applied responsive design best practices and server management.
+            </p>
+            <p className="project-tech">
+              <strong>Technologies: </strong>
+              <img
+                className="tech-logos"
+                src={elementor}
+                alt="Elementor-logo"
+              ></img>
+              ,
+              <img
+                className="tech-logos"
+                src={stripeLogo}
+                alt="Stripe-logo"
+              ></img>
+            </p>
+          </div>
         </div>
         <Contact></Contact>
         <Carroussel></Carroussel>
+        <div className="cajon-content">
+          <h3 className="section-name">
+            <strong>OTHER TECHNOLOGIES</strong>
+          </h3>
+          <p className="text-content">
+            I have experience and basic knowledge in a variety of technologies,
+            including
+            <strong> HTML</strong>, <strong>CSS</strong>,{" "}
+            <strong>JavaScript</strong>,<strong> React</strong>,{" "}
+            <strong>Node.js</strong>, <strong>Docker</strong>,
+            <strong> Git/GitHub</strong>, <strong>Figma</strong>,{" "}
+            <strong>Elementor</strong>,<strong> Java</strong>,{" "}
+            <strong>PHP</strong>, <strong>MySQL</strong>,
+            <strong> PostgreSQL</strong>, <strong>Prisma</strong>,{" "}
+            <strong>Postman</strong>,<strong> Stripe</strong>,{" "}
+            <strong>Swift</strong>, <strong>WordPress</strong>, and development
+            tools like <strong>VS Code</strong> and <strong>Eclipse</strong>.
+          </p>
+        </div>
         <TechLogos></TechLogos>
       </div>
     </div>
