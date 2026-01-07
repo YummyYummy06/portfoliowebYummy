@@ -7,39 +7,41 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className={`nav ${isOpen ? "open" : ""}`}>
+    <>
       <img
         className="internet-logo"
         src={Internet}
         alt="internet-logo"
         onClick={() => setIsOpen((prev) => !prev)}
       />
-      <a
-        className="vertical"
-        href="https://github.com/YummyYummy06"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GithubFillIcon
-          size={50}
-          color="rgba(95,76,158,1)"
-          className="vertical-logo"
-        />
-        YummyYummy06
-      </a>
-      <a
-        className="vertical"
-        href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <LinkedinBoxLine
-          size={50}
-          color="rgba(95,76,158,1)"
-          className="vertical-logo"
-        />
-        YummyYummy06
-      </a>
-    </nav>
+      <nav className={`nav ${isOpen ? "open" : ""}`}>
+        <a
+          className="vertical"
+          href="https://github.com/YummyYummy06"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GithubFillIcon
+            size={50}
+            color="rgba(95,76,158,1)"
+            className="vertical-logo"
+          />
+          YummyYummy06
+        </a>
+        <a
+          className="vertical"
+          href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedinBoxLine
+            size={50}
+            color="rgba(95,76,158,1)"
+            className="vertical-logo"
+          />
+          YummyYummy06
+        </a>
+      </nav>
+    </>
   );
 }

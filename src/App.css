@@ -77,11 +77,12 @@ p {
 
 .internet-logo {
   top: 0px;
-  position: absolute;
+  position: fixed;
   height: 50px;
   max-width: 100%;
   padding: 10px;
   transition: transform 0.2s ease;
+  z-index: 10; /* para que esté encima */
 }
 .internet-logo:hover {
   transform: scale(1.5);
@@ -474,5 +475,19 @@ p {
   .github:hover {
     transform: scale(1.05); /* efecto sutil en hover/tap */
     background-color: rgba(111, 203, 176, 0.2); /* fondo sutil para destacar */
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .open {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }
