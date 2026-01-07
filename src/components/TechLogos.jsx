@@ -8,7 +8,7 @@ import githubLogo from "../assets/images/Github-logo.svg";
 import eclipseLogo from "../assets/images/Eclipse-logo.svg";
 import elementorLogo from "../assets/images/Elementor-logo.svg";
 import figmaLogo from "../assets/images/Figma-logo.svg";
-import gitLogo from "../assets/images/Git-logo.svg";
+import gitLogo from "../assets/images/git-logo.svg";
 import javaLogo from "../assets/images/Java-logo.svg";
 import mysqlLogo from "../assets/images/MySQL-logo.svg";
 import phpLogo from "../assets/images/PHP-logo.svg";
