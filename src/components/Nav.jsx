@@ -26,7 +26,7 @@ export default function Nav() {
             color="rgba(95,76,158,1)"
             className="vertical-logo"
           />
-          YummyYummy06
+          Github
         </a>
         <a
           className="vertical"
@@ -39,7 +39,7 @@ export default function Nav() {
             color="rgba(95,76,158,1)"
             className="vertical-logo"
           />
-          YummyYummy06
+          Linkedin
         </a>
       </nav>
     </>

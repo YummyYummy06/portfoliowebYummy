@@ -490,6 +490,7 @@ p {
 
   .vertical-logo {
     transform: rotate(-25deg);
+    margin-right: 5px;
   }
 
   .open {
