@@ -516,3 +516,16 @@ p {
     animation: slide 15s linear infinite;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: white !important;
+  }
+  .vertical,
+  .email,
+  .telf,
+  .linkedin,
+  .github {
+    color: white !important;
+  }
+}
