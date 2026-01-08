@@ -39,11 +39,7 @@ export default function Home() {
     }
   };
   const openProject1 = () => {
-    window.open(
-      "/ai-workflow-automation.png ",
-      "_blank",
-      "noopener,noreferrer"
-    );
+    window.open("/ai-workflow-automation.png ", "_self", "noopener,noreferrer");
   };
 
   return (
