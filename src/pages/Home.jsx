@@ -48,9 +48,7 @@ export default function Home() {
 
   return (
     <div className="page">
-      <nav>
-        <Nav></Nav>
-      </nav>
+      <Nav></Nav>
       <div className="content">
         <div className="cajon-nombre">
           <img className="avatar" src={avatar} alt="avatar"></img>
@@ -69,10 +67,12 @@ export default function Home() {
             Passionate about technology and software development, I am currently
             based in Marbella and at the beginning of my professional career.
             Known for my positive attitude, consistency, and strong willingness
-            to learn, I have built a solid foundation through formal education,
-            personal projects, and internships. My curiosity about how
-            technology works began at a young age and has evolved into a focus
-            on web and backend development. I am highly motivated to keep
+            to learn, I have built a solid foundation through formal
+            education—including studies in{" "}
+            <strong>FP of DAM (Multiplatform Application Development)</strong>
+            —as well as personal projects and internships. My curiosity about
+            how technology works began at a young age and has evolved into a
+            focus on web and backend development. I am highly motivated to keep
             learning, enjoy tackling technical challenges, exploring new tools,
             and collaborating on projects that deliver real-world impact.
           </p>
