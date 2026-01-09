@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import htmlLogo from "../assets/images/HTML5-logo.svg";
-import cssLogo from "../assets/images/CSS3-logo.svg";
-import javascriptLogo from "../assets/images/JavaScript-logo.svg";
-import nodeLogo from "../assets/images/NodeJs-logo.svg";
 import img1 from "../assets/images/img1.jpg";
 import img2 from "../assets/images/img2.jpg";
 import img3 from "../assets/images/img3.jpg";
 import img4 from "../assets/images/img4.jpg";
-import leftArrow from "../assets/images/leftArrow-logo.svg";
-import rightArrow from "../assets/images/rightArrowlogo.svg";
 
 export default function Carroussel() {
   const [indice, setIndice] = useState(0);

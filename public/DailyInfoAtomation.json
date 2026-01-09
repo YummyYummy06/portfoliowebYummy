@@ -1,0 +1,181 @@
+{
+  "name": "DailyInfo",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        32,
+        -64
+      ],
+      "id": "f0db4cd3-c113-41a5-8908-00d1bc13a8d1",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "chatId": "439379969",
+        "text": "={{ $json.ResumenMatinal }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1008,
+        -64
+      ],
+      "id": "81ef6949-664d-45c8-93ca-b9b558fbed3c",
+      "name": "Send a text message",
+      "webhookId": "4cd1be6e-2224-41b7-be85-90e96e568cd9",
+      "alwaysOutputData": true,
+      "credentials": {
+        "telegramApi": {
+          "id": "0L0sie8z7Fsc11R6",
+          "name": "Daily Bot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// --- 1. DATOS DEL TIEMPO ---\n// Usamos validación segura (?) para que no falle si falta algún dato\nconst weatherData = $('ObtenerTiempo').first().json;\nconst current = weatherData.current || {};\nconst loc = weatherData.location || {};\n\nconst locationName = loc.name || 'Tu ubicación';\nconst locationTime = loc.localtime || '';\n// Nota: he corregido las rutas aquí abajo, suelen estar dentro de 'current'\nconst conditionText = current.condition ? current.condition.text : '';\nconst conditionIcon = current.condition ? current.condition.icon : '';\nconst temperatureCelsius = current.temp_c || 'N/A';\nconst humidity = current.humidity || 'N/A';\nconst windKph = current.wind_kph || 'N/A';\nconst feelsLikeCelsius = current.feelslike_c || 'N/A';\nconst gustKph = current.gust_kph || 'N/A';\n\nlet mensajeFinal = `El clima en ${locationName} a día ${locationTime} es: ${conditionText}.\\n`;\nmensajeFinal += `Temperatura: ${temperatureCelsius}°C, Sensación térmica: ${feelsLikeCelsius}°C.\\n`;\nmensajeFinal += `Humedad: ${humidity}%.\\n`;\nmensajeFinal += `Viento: ${windKph} km/h, Ráfagas: ${gustKph} km/h.\\n`;\nmensajeFinal += `📅 **Tus eventos para hoy:**\\n`;\n\n// --- 2. LISTA DE EVENTOS ---\nif (items.length > 0) {\n    for (const item of items) {\n        const evento = item.json;\n\n        // === CORRECCIÓN DEL ERROR ===\n        // Si el evento no tiene propiedad 'start', nos lo saltamos y vamos al siguiente.\n        if (!evento.start) {\n            continue;\n        }\n\n        const titulo = evento.summary || 'Evento sin título';\n\n        // Aquí ya es seguro acceder a 'dateTime' porque hemos validado que 'start' existe\n        let horaInicio = '';\n\n        if (evento.start.dateTime) {\n            const fechaHora = new Date(evento.start.dateTime);\n            horaInicio = fechaHora.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });\n        } else if (evento.start.date) {\n            horaInicio = 'Todo el día';\n        } else {\n            horaInicio = 'Hora desconocida';\n        }\n\n        mensajeFinal += `• [${horaInicio}] ${titulo}\\n`;\n    }\n} else {\n    mensajeFinal += \"No tienes eventos hoy. ¡A descansar! 🎉\";\n}\n\nreturn {\n    json: {\n        ResumenMatinal: mensajeFinal\n    }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        -64
+      ],
+      "id": "c1c03020-7e38-43ff-bfbe-904b017c4248",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "url": "http://api.weatherapi.com/v1/current.json",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "Marbella"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        240,
+        -64
+      ],
+      "id": "e9311276-4410-4953-ad70-914f1a9acba7",
+      "name": "ObtenerTiempo",
+      "alwaysOutputData": true,
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "dkouI9Gj2PhCPjJr",
+          "name": "Query Auth account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "letiel52@gmail.com",
+          "mode": "list",
+          "cachedResultName": "letiel52@gmail.com"
+        },
+        "limit": 5,
+        "timeMin": "={{ $now.beginningOf('day').toISO() }}",
+        "timeMax": "={{ $now.endOf('day').toISO() }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        528,
+        -64
+      ],
+      "id": "158ba780-3b1c-4ac5-8baa-43f9d2f8c18d",
+      "name": "ObetenerEventos",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "e1CUIMucvWpzA1ox",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "ObtenerTiempo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ObtenerTiempo": {
+      "main": [
+        [
+          {
+            "node": "ObetenerEventos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ObetenerEventos": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "273a0b70-a3fd-4ff7-a69a-a7fc52558cf4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "6d10fb3916d33dc51d4e6c95bc6a1c3b32d92da22f37cd15dba2da98e97fc4a8"
+  },
+  "id": "NNWM08ypUHlSEi4z",
+  "tags": []
+}
