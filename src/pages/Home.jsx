@@ -6,6 +6,7 @@ import n8n from "../assets/images/n8n-icon-seeklogo.svg";
 import avatar from "../assets/images/avatar2.png";
 import elementor from "../assets/images/Elementor-logo.svg";
 import stripeLogo from "../assets/images/Stripe-logo.svg";
+import { useNavigate } from "react-router-dom";
 import {
   RiReactjsFill,
   RiGithubFill,
@@ -21,6 +22,7 @@ import {
 } from "@remixicon/react";
 
 export default function Home() {
+  const navigate = useNavigate();
   const openGitHub = (n) => {
     switch (n) {
       case 1:
@@ -39,7 +41,7 @@ export default function Home() {
     }
   };
   const openProject1 = () => {
-    window.open("/descargar-json", "_self", "noopener,noreferrer");
+    navigate("/descargar-json");
   };
 
   return (
