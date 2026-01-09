@@ -20,11 +20,7 @@ export default function DownloadJson() {
     window.open("/", "_self", "noopener,noreferrer");
   };
   const openPicture = () => {
-    window.open(
-      "src/assets/images/Workflow-linear.png",
-      "_blank",
-      "noopener,noreferrer"
-    );
+    window.open(img1, "_blank", "noopener,noreferrer");
   };
 
   return (
