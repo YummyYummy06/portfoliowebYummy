@@ -23,9 +23,16 @@ p {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+.titulo {
+  text-align: center;
+  padding: 20px;
 }
 
-.nombre {
+.nombre,
+.titulo {
   font-size: 4rem;
   font-weight: bold;
   margin: 0;
@@ -176,9 +183,13 @@ p {
   max-width: 500px; /* opcional: evita que se estiren demasiado */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.cajon-img > img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 /* Hover */
-.cajon-projects > div:hover {
+.cajon-projects > div:hover,
+.cajon-img > img:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25),
     0 0 25px rgba(255, 255, 255, 0.2);
@@ -226,6 +237,7 @@ p {
   width: 50px;
 }
 .cajon-carroussel,
+.cajon-img,
 .cajon-logos {
   position: relative;
   display: flex;
@@ -265,7 +277,8 @@ p {
   }
 }
 
-.img {
+.img,
+.imgStatic {
   width: 90%;
   max-width: 1200px;
   aspect-ratio: 16 / 9;
@@ -293,9 +306,34 @@ p {
   background-color: #6f5cb0;
 }
 
+.btn-descarga:hover {
+  background-color: #6f5cb0;
+  transform: scale(1.2);
+}
+.btn-volver:hover {
+  background-color: #333333;
+  transform: scale(1.2);
+  color: rgb(209, 0, 0);
+}
+.btn-descarga,
+.btn-volver {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #493a7b;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+.btn-volver {
+  background-color: rgb(26, 26, 26);
+}
+
 .btn:focus {
   outline-offset: 2px;
-  background-color: #5f4c9e;
+  background-color: #493a7b;
 }
 
 /* Active: mientras el botón está presionado */
@@ -337,6 +375,11 @@ p {
   .nombre {
     font-size: 1.5rem;
   }
+  .titulo {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 20px;
+  }
 
   .profesion {
     font-size: 1rem;
@@ -349,6 +392,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
   }
 
   .cajon-content,
@@ -394,7 +439,8 @@ p {
   }
 
   /* Carrusel: hacer la imagen responsiva y botones superpuestos */
-  .cajon-carroussel {
+  .cajon-carroussel,
+  .cajon-img {
     position: relative;
     display: block;
     padding-top: 30px;
@@ -404,7 +450,8 @@ p {
     max-width: 95vw; /* limitar ancho total */
   }
 
-  .img {
+  .img,
+  .imgStatic {
     width: 100%;
     max-width: 90vw; /* reducir ancho para hacerlo más pequeño */
     height: auto;
