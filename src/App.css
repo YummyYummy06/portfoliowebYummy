@@ -301,7 +301,6 @@ p {
   transition: transform 0.1s, background-color 0.1s;
   background-color: black;
 }
-
 .btn:hover {
   background-color: #6f5cb0;
 }
